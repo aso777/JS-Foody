@@ -1,0 +1,31 @@
+{
+  "name": "js-foody",
+  "version": "1.0.0",
+  "description": "Responsive recipe search application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aso777/JS-Foody.git"
+  },
+  "author": "Andrey Safonov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aso777/JS-Foody/issues"
+  },
+  "homepage": "https://github.com/aso777/JS-Foody#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "jquery": "^3.3.1"
+  }
+}
