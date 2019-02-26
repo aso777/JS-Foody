@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/aso777/JS-Foody#readme",
   "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
     "babel-loader": "^8.0.5",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.29.5",
