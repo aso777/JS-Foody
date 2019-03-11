@@ -110,7 +110,7 @@ body {
 }
 
 .btn-inline {
-  color: #F59A83;
+  color: #FF416C;
   font-size: 1.2rem;
   border: none;
   background-color: #F9F5F3;
@@ -134,7 +134,7 @@ body {
 }
 
 .btn-inline:hover {
-  color: #F48982;
+  color: #FF416C;
   background-color: #F2EFEE;
 }
 
@@ -153,7 +153,7 @@ body {
 .btn-tiny svg {
   height: 100%;
   width: 100%;
-  fill: #F59A83;
+  fill: #FF416C;
   transition: all .3s;
 }
 
@@ -162,12 +162,12 @@ body {
 }
 
 .btn-tiny:hover svg {
-  fill: #F48982;
+  fill: #FF416C;
   transform: translateY(-1px);
 }
 
 .btn-tiny:active svg {
-  fill: #F48982;
+  fill: #FF416C;
   transform: translateY(0);
 }
 
@@ -185,11 +185,10 @@ body {
 .heading-2 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #F59A83;
+  color: #FF416C;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
   text-align: center;
-  transform: skewY(-3deg);
 }
 
 .copyright {
@@ -211,7 +210,7 @@ body {
 .loader svg {
   height: 5.5rem;
   width: 5.5rem;
-  fill: #F59A83;
+  fill: #FF416C;
   transform-origin: 44% 50%;
   animation: rotate 1.5s infinite linear;
 }
@@ -369,8 +368,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(to right bottom, #FF416C, #FF4B2B);
-  opacity: .4;
 }
 
 .results_fig img,
@@ -385,7 +382,7 @@ body {
 .results_name,
 .likes_name {
   font-size: 1.3rem;
-  color: #F59A83;
+  color: #FF416C;
   text-transform: uppercase;
   font-weight: 600;
   margin-bottom: .3rem;
@@ -495,7 +492,7 @@ body {
 .recipe_info-icon {
   height: 2rem;
   width: 2rem;
-  fill: #F59A83;
+  fill: #FF416C;
   margin-right: 1rem;
 }
 
@@ -573,8 +570,8 @@ body {
 .recipe_icon {
   height: 1.8rem;
   width: 1.8rem;
-  fill: #F59A83;
-  border: 1px solid #F59A83;
+  fill: #FF416C;
+  border: 1px solid #FF416C;
   border-radius: 50%;
   padding: 2px;
   margin-right: 1rem;
