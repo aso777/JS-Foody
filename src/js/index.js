@@ -6,7 +6,6 @@ import {
     clearLoader
 } from './views/base';
 import Recipe from './models/Recipe';
-import { key, API_key } from './config';
 
 /**
  * Global state of the app
@@ -17,7 +16,9 @@ import { key, API_key } from './config';
  */
 const state = {};
 
-// Search Controller
+/**
+ * Search Controller
+ */
 const controlSearch = async () => {
     //Get query from a view
     const query = searchView.getInput();
@@ -31,13 +32,18 @@ const controlSearch = async () => {
         searchView.clearResults();
         renderLoader(elements.searchRes);
 
+        try {
+            // Search for recipes
+            await state.search.getRecipes();
 
-        // Search for recipes
-        await state.search.getRecipes();
+            //Render the results
+            clearLoader();
+            searchView.renderResults(state.search.results);
 
-        //Render the results
-        clearLoader();
-        searchView.renderResults(state.search.results);
+        } catch (error) {
+            console.log('Something went wrong while searching: ' + error);
+        }
+
     }
 
 };
@@ -57,6 +63,38 @@ elements.searchResPages.addEventListener('click', e => {
 });
 
 
-//Recipe Controller
-const r = new Recipe(46956);
-r.getRecipe();
+/**
+ * Recipe Controller
+ */
+const controlRecipe = async () => {
+    //Get the id from URL
+    const id = window.location.hash.replace('#', '');
+
+    console.log(id);
+
+    //Retrieve the recipe
+    if (id) {
+        //Prepare UI for changes
+
+        //Create new recipe object
+        state.recipe = new Recipe(id)
+
+        try {
+            //Get recipe data
+            await state.recipe.getRecipe();
+
+            //Calculate servings and time
+            state.recipe.calcCookingTime();
+            state.recipe.calcServings();
+
+            //Render recipe
+            console.log(state.recipe);
+        } catch (error) {
+            console.log('Something went wrong while getting the recipe: ' + error);
+        }
+
+    }
+
+};
+
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
