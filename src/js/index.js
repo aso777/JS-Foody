@@ -39,8 +39,12 @@ const controlSearch = async () => {
 
             //Render the results
             clearLoader();
-            searchView.renderResults(state.search.results);
-
+            //Need to catch error if
+            if (state.search.results.error === 'limit') {
+                alert(`Food2Fork has reached the maximum requests. Come back tomorrow.`);
+            } else {
+                searchView.renderResults(state.search.results);
+            }
         } catch (error) {
             console.log('Something went wrong while searching: ' + error);
         }
@@ -79,8 +83,13 @@ const controlRecipe = async () => {
         recipeView.clearRecipe();
         renderLoader(elements.recipe);
 
+        //Highlight selected 
+        if (state.search) {
+            searchView.highlightSelected(id);
+        }
+
         //Create new recipe object
-        state.recipe = new Recipe(id)
+        state.recipe = new Recipe(id);
 
         try {
             //Get recipe data and parse ingredients
