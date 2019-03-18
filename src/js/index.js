@@ -132,6 +132,24 @@ const controlList = () => {
 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
+// Handle delete and update list item events
+elements.shopping.addEventListener('click', e => {
+    const id = e.target.closest('.shopping_item').dataset.itemid;
+    console.log(id);
+
+    //Handle delete event
+    if (e.target.matches('.shopping_delete, .shopping_delete *')) {
+        // Update the list
+        state.list.deleteItem(id);
+
+        // Update the UI
+        listView.deleteItem(id);
+    } else if (e.target.matches('.shopping_count-value')) {
+        const originalCount = pareseFloat(e.target.value, 10);
+        state.list.updateCount(id, originalCount);
+    }
+});
+
 // Handling recipe button clicks
 elements.recipe.addEventListener('click', e => {
     if (e.target.matches('.btn-decrease, .btn-decrease *')) {

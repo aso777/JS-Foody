@@ -3,7 +3,7 @@ import {
 } from './base';
 
 export const renderItem = item => {
-    const markup = `<li class="shopping_item" data-itemId="${item.id}">
+    const markup = `<li class="shopping_item" data-itemid="${item.id}">
         <div class="shopping_count">
             <input type="number" value="${item.count}" step="${item.count}" class="shopping_count-value">
             <p>${item.unit}</p>
@@ -19,6 +19,6 @@ export const renderItem = item => {
 };
 
 export const deleteItem = id => {
-    const item = document.querySelector(`[date-itemId="${id}"]`);
-    item.parentElement.remove(item);
+    const item = document.querySelector(`[data-itemid="${id}"]`);
+    if (item) item.parentElement.removeChild(item);
 };
