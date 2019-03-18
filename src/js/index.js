@@ -3,6 +3,7 @@ import Recipe from './models/Recipe';
 import List from './models/List';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
+import * as listView from './views/listView';
 import {
     elements,
     renderLoader,
@@ -113,6 +114,22 @@ const controlRecipe = async () => {
 
 };
 
+/*
+* List Controller
+*/
+const controlList = () => {
+    console.log('controlList called clicked');
+    // Create a new list if there is none yet
+    if(!state.list) state.list = new List();
+
+    // Add ingredient to the list and ui
+    state.recipe.ingredients.forEach(el => {
+        const item = state.list.addItem(el.count, el.unit, el.ingredient);
+        listView.renderItem(item);
+        console.log(state.list);
+    });
+}
+
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
 
 // Handling recipe button clicks
@@ -125,7 +142,7 @@ elements.recipe.addEventListener('click', e => {
     } else if (e.target.matches('.btn-increase, .btn-increase *')) {
         state.recipe.updateServings('inc');
         recipeView.updateServingsIngredients(state.recipe);
+    } else if (e.target.matches('.recipe_btn-add, .recipe_btn-add *')) {
+        controlList();
     }
-
-    console.log(state.recipe);
 });

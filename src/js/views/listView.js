@@ -3,8 +3,7 @@ import {
 } from './base';
 
 export const renderItem = item => {
-    const markup = `<!--
-    <li class="shopping_item" data-itemId="${item.id}">
+    const markup = `<li class="shopping_item" data-itemId="${item.id}">
         <div class="shopping_count">
             <input type="number" value="${item.count}" step="${item.count}" class="shopping_count-value">
             <p>${item.unit}</p>
@@ -15,9 +14,7 @@ export const renderItem = item => {
                 <use href="img/icons.svg#icon-circle-with-cross"></use>
             </svg>
         </button>
-    </li>
-    -->`;
-
+    </li>`;
     elements.shopping.insertAdjacentHTML('beforeend', markup);
 };
 
