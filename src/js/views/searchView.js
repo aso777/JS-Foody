@@ -19,12 +19,10 @@ export const highlightSelected = id => {
     document.querySelector(`a.results_link[href="#${id}"]`).classList.add('results_link--active');
 };
 
-const limitRecipeTitle = (recipe, limit = 17) => {
-    const string = recipe.title;
-
-    if (string.length > limit) {
+export const limitRecipeTitle = (title, limit = 17) => {
+    if (title.length > limit) {
         let newString = '';
-        let stringArr = string.split(' ');
+        let stringArr = title.split(' ');
         let indexMax, totalLength = 0;
 
         for (var i = 0; i < stringArr.length; i++) {
@@ -44,14 +42,13 @@ const limitRecipeTitle = (recipe, limit = 17) => {
         return newString;
 
     } else {
-        return recipe.title;
+        return title;
     }
-
 
 };
 
 const renderRecipe = recipe => {
-    const title = limitRecipeTitle(recipe, 50);
+    const title = limitRecipeTitle(recipe.title, 50);
     const markup = `
     <li>
     <a class="results_link" href="#${recipe.recipe_id}">
