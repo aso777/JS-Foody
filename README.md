@@ -7,8 +7,8 @@ Written with HTML, CSS, JS.
 
 ### Dependencies
 
-You will need to download Node.js, which also comes with latest NPM. 
-[Node.js](https://nodejs.org/en/)
+You will need to download [Node.js](https://nodejs.org/en/), which also comes with latest NPM. 
+
 
 ### Installing
 Download or clone repository and run:
