@@ -20,4 +20,4 @@ npm start
 ### Credits
 Recipe search is powered by [Food2Fork API](https://www.food2fork.com/about/api).
 
-The app was designed and created as part of the final project [Complete JavaScript Course by Jonas](https://www.udemy.com/the-complete-javascript-course/learn/v4/overview).
+The app was designed and created as part of the final project [Complete JavaScript Course by Jonas Schmedtmann](https://www.udemy.com/the-complete-javascript-course/learn/v4/overview).
