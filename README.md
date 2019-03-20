@@ -1,7 +1,7 @@
 # JS-Foody
 A web app to find delicious recipes. After you found the recipe you like, you can check out ingredients, increase number of servings and add it to your shopping list or save it for later in your favourites. Favourites will be saved next time you come back to the app.
 
-<img src="https://i.imgur.com/950hkeA.png"/>
+<img src="https://i.imgur.com/dB1mBPL.png" title="source: imgur.com" />
 
 Written with HTML, CSS, JS.
 
