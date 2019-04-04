@@ -14,6 +14,11 @@ You will need to download [Node.js](https://nodejs.org/en/), which also comes wi
 Download or clone repository and run:
 
 ```
+npm install
+```
+then
+
+```
 npm start
 ```
 
